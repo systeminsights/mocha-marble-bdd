@@ -18,8 +18,9 @@
     "url": "https://github.com/systeminsights/mocha-marble-bdd/issues"
   },
   "dependencies": {
-    "chai": "3.4.1",
-    "mocha": "2.3.4",
-    "@reactivex/rxjs": "5.0.0-beta.0"
+    "@reactivex/rxjs": "^5.0.0-beta.0",
+    "chai": "^3.4.1",
+    "escape-string-regexp": "^1.0.4",
+    "mocha": "^2.3.4"
   }
 }

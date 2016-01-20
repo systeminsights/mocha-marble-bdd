@@ -6,14 +6,12 @@
 // The extensions are marked with MARBLE and BEGIN_MARBLE/END_MARBLE.
 //
 
-const stringify = require('json-stringify-safe');
-
-const Mocha    = require('mocha');
-const Suite    = require('mocha/lib/suite');
-const Test     = require('mocha/lib/test');
-const escapeRe = require('escape-string-regexp');
-const chai     = require("chai")
-const Rx       = require("@reactivex/rxjs")
+var Mocha    = require('mocha');
+var Suite    = require('mocha/lib/suite');
+var Test     = require('mocha/lib/test');
+var escapeRe = require('escape-string-regexp');
+var chai     = require("chai")
+var Rx       = require("@reactivex/rxjs")
 
 module.exports = Mocha.interfaces['marble-bdd'] = function(suite) {
   var suites = [suite];
