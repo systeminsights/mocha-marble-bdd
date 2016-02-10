@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Mocha BDD UI extended for RxJs5 marble testing",
   "scripts": {
-    "test": "mocha -r marble-bdd.js --ui marble-bdd ./test/**/*"
+    "test": "mocha -r index.js --ui marble-bdd ./test/**/*"
   },
   "repository": {
     "type": "git",
