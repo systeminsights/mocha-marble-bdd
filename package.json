@@ -2,6 +2,9 @@
   "name": "mocha-marble-bdd",
   "version": "1.0.0",
   "description": "Mocha BDD UI extended for RxJs5 marble testing",
+  "scripts": {
+    "test": "mocha -r marble-bdd.js --ui marble-bdd ./test/**/*"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/systeminsights/mocha-marble-bdd.git"
@@ -18,7 +21,8 @@
     "url": "https://github.com/systeminsights/mocha-marble-bdd/issues"
   },
   "dependencies": {
-    "@reactivex/rxjs": "^5.0.0-beta.0",
+    "@reactivex/rxjs": "^5.0.0-beta.1",
+    "lolex": "^1.4.0",
     "chai": "^3.4.1",
     "escape-string-regexp": "^1.0.4",
     "mocha": "^2.3.4"
