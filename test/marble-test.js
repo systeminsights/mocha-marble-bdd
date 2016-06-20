@@ -16,7 +16,8 @@ describe("windowTime with Lolex", function() {
     //                                     ----|
     const expected     =      "----b---c---b-(b|)"
 
-    const testStream   = inputStream.windowTime(timespan).map((v) => v.toArray()).mergeAll()
+    const testStream   = inputStream.windowTime(timespan, null, global.rxTestScheduler)
+      .map((v) => v.toArray()).mergeAll()
 
     return expectObservable(testStream).toBe(expected, events)
   })
@@ -34,7 +35,7 @@ describe("windowTime with Lolex", function() {
     //                                        ----|
     const expected     =         "----b---c---b-(b|)"
 
-    const testStream   = inputStream.windowTime(timespan).map((v) => v.toArray()).mergeAll()
+    const testStream   = inputStream.windowTime(timespan, null, global.rxTestScheduler).map((v) => v.toArray()).mergeAll()
 
     return expectObservable(testStream).toBe(expected, events)
   })
@@ -54,7 +55,7 @@ describe("windowTime with Lolex", function() {
     //                                     ----|
     const expected     =      "----d---b---d---b(b|)"
 
-    const testStream   = inputStream.merge(inputStream2).windowTime(timespan).map((v) => v.toArray()).mergeAll()
+    const testStream   = inputStream.merge(inputStream2).windowTime(timespan, null, global.rxTestScheduler).map((v) => v.toArray()).mergeAll()
 
     return expectObservable(testStream).toBe(expected, events)
   })

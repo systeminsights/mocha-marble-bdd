@@ -12,14 +12,11 @@ var Test     = require('mocha/lib/test');
 var escapeRe = require('escape-string-regexp');
 var chai     = require("chai")
 var Rx       = require("@reactivex/rxjs")
-var lolex    = require("lolex")
-var LolexTestScheduler = require("./LolexTestScheduler")
 
 module.exports = Mocha.interfaces['marble-bdd'] = function(suite) {
   var suites = [suite];
   
-  global.rxLolexTestScheduler = null //MARBLE
-  global.clock = null //MARBLE
+  global.rxTestScheduler = null //MARBLE
 
   suite.on('pre-require', function(context, file, mocha) {
     var common = require('mocha/lib/interfaces/common')(suites, context);
@@ -106,61 +103,75 @@ module.exports = Mocha.interfaces['marble-bdd'] = function(suite) {
     //BEGIN_MARBLE ----------------------------------------------------------------------------------
     
     context.hot = function () {
-      if (!global.rxLolexTestScheduler) {
+      if (!global.rxTestScheduler) {
         throw 'tried to use hot() in non marble test'
       }
-      return global.rxLolexTestScheduler.createHotObservable.apply(global.rxLolexTestScheduler, arguments)
+      return global.rxTestScheduler.createHotObservable.apply(global.rxTestScheduler, arguments)
     }
     
     context.cold = function () {
-      if (!global.rxLolexTestScheduler) {
+      if (!global.rxTestScheduler) {
         throw 'tried to use cold() in non marble test'
       }
-      return global.rxLolexTestScheduler.createColdObservable.apply(global.rxLolexTestScheduler, arguments)
+      return global.rxTestScheduler.createColdObservable.apply(global.rxTestScheduler, arguments)
     }
     
     context.time = function  () {
-      if (!global.rxLolexTestScheduler) {
+      if (!global.rxTestScheduler) {
         throw 'tried to use time() in non marble test'
       }
-      return global.rxLolexTestScheduler.createTime.apply(global.rxLolexTestScheduler, arguments)
+      return global.rxTestScheduler.createTime.apply(global.rxTestScheduler, arguments)
     }
     
     context.expectObservable = function () {
-      if (!global.rxLolexTestScheduler) {
+      if (!global.rxTestScheduler) {
         throw 'tried to use expectObservable() in non marble test'
       }
-      return global.rxLolexTestScheduler.expectObservable.apply(global.rxLolexTestScheduler, arguments)
+      return global.rxTestScheduler.expectObservable.apply(global.rxTestScheduler, arguments)
     }
     
     context.expectSubscriptions = function () {
-      if (!global.rxLolexTestScheduler) {
+      if (!global.rxTestScheduler) {
         throw 'tried to use expectSubscriptions() in non marble test'
       }
-      return global.rxLolexTestScheduler.expectSubscriptions.apply(global.rxLolexTestScheduler, arguments)
+      return global.rxTestScheduler.expectSubscriptions.apply(global.rxTestScheduler, arguments)
     }
     
     function assertDeepEqual(actual, expected) {
       chai.expect(actual).to.deep.equal(expected);
     }
-    
+
     context.it.marble = function (description, cb) {
       if (cb.length > 0) {
         throw new Error("marble tests must be sync")
       }
       try {
         context.it(description, function () {
-          global.rxLolexTestScheduler = new LolexTestScheduler(assertDeepEqual)
-          global.clock = lolex.install()
+          global.rxTestScheduler = new Rx.TestScheduler(assertDeepEqual)
           cb(this)
-          global.rxLolexTestScheduler.flush()
-          global.clock.uninstall()
+          global.rxTestScheduler.flush()
         })
       } catch (err) {
         console.log(">>> err=", err)
       } finally {
-        global.rxLolexTestScheduler = null
-        global.clock = null
+        global.rxTestScheduler = null
+      }
+    }
+
+    context.it.marble.only = function(description, cb) {
+      if (cb.length > 0) {
+        throw new Error("marble tests must be sync")
+      }
+      try {
+        context.it.only(description, function () {
+          global.rxTestScheduler = new Rx.TestScheduler(assertDeepEqual)
+          cb(this)
+          global.rxTestScheduler.flush()
+        })
+      } catch (err) {
+        console.log(">>> err=", err)
+      } finally {
+        global.rxTestScheduler = null
       }
     }
     
@@ -193,5 +204,3 @@ module.exports = Mocha.interfaces['marble-bdd'] = function(suite) {
   })
   
 }
-
-
