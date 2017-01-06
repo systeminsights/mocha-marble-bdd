@@ -11,7 +11,7 @@ var Suite    = require('mocha/lib/suite');
 var Test     = require('mocha/lib/test');
 var escapeRe = require('escape-string-regexp');
 var chai     = require("chai")
-var Rx       = require("@reactivex/rxjs")
+var Rx       = require("rxjs")
 
 module.exports = Mocha.interfaces['marble-bdd'] = function(suite) {
   var suites = [suite];

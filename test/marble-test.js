@@ -1,6 +1,6 @@
 "use strict"
 
-const Rx = require("@reactivex/rxjs")
+const Rx = require("rxjs")
 
 describe("windowTime with Lolex", function() {
   it.marble("cold observable", function() {
