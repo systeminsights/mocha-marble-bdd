@@ -14,23 +14,6 @@ var chai     = require("chai")
 var Rx       = require("rxjs")
 
 
-// When running marble tests it is not possible to use regular chai assertions because
-// the marble test framework executes only after the entire test it body has been executed.
-// So where we hack in a way to add additional assertions to run after the marble bit.
-// Maybe some better syntax could be used.
-//
-// export type valueToBeFn = (expected: any) => void;
-function expectValue(actual) {
-  const flushTest = {actual, ready: false}
-  this.flushTests.push(flushTest)
-  return ({
-    toBe(expected) {
-      flushTest.ready = true
-      flushTest.expected = expected
-    }
-  })
-}
-
 module.exports = Mocha.interfaces['marble-bdd'] = function(suite) {
   var suites = [suite];
   
@@ -155,13 +138,6 @@ module.exports = Mocha.interfaces['marble-bdd'] = function(suite) {
       return global.rxTestScheduler.expectSubscriptions.apply(global.rxTestScheduler, arguments)
     }
 
-    context.expectValue = function () {
-      if (!global.rxTestScheduler) {
-        throw 'tried to use expectValue() in non marble test'
-      }
-      return global.rxTestScheduler.expectValue.apply(global.rxTestScheduler, arguments)
-    }
-
     function assertDeepEqual(actual, expected) {
       chai.expect(actual).to.deep.equal(expected);
     }
@@ -173,7 +149,6 @@ module.exports = Mocha.interfaces['marble-bdd'] = function(suite) {
       try {
         context.it(description, function () {
           global.rxTestScheduler = new Rx.TestScheduler(assertDeepEqual)
-          global.rxTestScheduler.expectValue = expectValue
           cb(this)
           global.rxTestScheduler.flush()
         })
