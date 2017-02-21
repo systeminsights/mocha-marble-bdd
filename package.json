@@ -1,14 +1,7 @@
 {
   "name": "mocha-marble-bdd",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Mocha BDD UI extended for RxJs5 marble testing",
-  "scripts": {
-    "test": "mocha -r index.js --ui marble-bdd ./test/**/*"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/systeminsights/mocha-marble-bdd.git"
-  },
   "keywords": [
     "mocha",
     "test",
@@ -17,13 +10,27 @@
   ],
   "author": "Barry Kaplan <barry@systeminsights.com>",
   "license": "MIT",
+  "homepage": "https://github.com/systeminsights/mocha-marble-bdd",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/systeminsights/mocha-marble-bdd.git"
+  },
   "bugs": {
     "url": "https://github.com/systeminsights/mocha-marble-bdd/issues"
   },
+  "publishConfig": {
+    "registry": "https://repo.systeminsights.com/repository/si-npm"
+  },
+  "engines": {
+    "node": ">=6.9.1"
+  },
+  "scripts": {
+    "test": "mocha -r index.js --ui marble-bdd ./test/**/*"
+  },
   "dependencies": {
-    "chai": "^3.4.1",
-    "escape-string-regexp": "^1.0.4",
+    "chai": "^3.5.0",
+    "escape-string-regexp": "^1.0.5",
     "mocha": "^3.2.0",
-    "rxjs": "^5.0.3"
+    "rxjs": "^5.2.0"
   }
 }
