@@ -166,7 +166,6 @@ module.exports = Mocha.interfaces['marble-bdd'] = function(suite) {
       try {
         context.it.only(description, function () {
           global.rxTestScheduler = new Rx.TestScheduler(assertDeepEqual)
-          global.rxTestScheduler.expectValue = expectValue
           cb(this)
           global.rxTestScheduler.flush()
         })
