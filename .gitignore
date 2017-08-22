@@ -1,8 +1,15 @@
 ## IDEA
-.idea/
+.idea/tasks.xml
+.idea/mongoSettings.xml
+.idea/watcherTasks.xml
+.idea/deployment.xml
+.idea/markdown-navigator/
+.idea/markdown-exported-files.xml
+.idea/markdown-navigator.xml
 
 ## Node
 node_modules/
 
+## Teamcity
 .ssh/
 .npmrc

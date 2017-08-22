@@ -28,7 +28,7 @@
     "test": "mocha -r index.js --ui marble-bdd ./test/**/*",
     "tc:version": "node version",
     "tc:test_pre": "echo test_pre noop",
-    "tc:test": "echo test noop",
+    "tc:test": "mocha -r index.js --ui marble-bdd ./test/**/*",
     "tc:test_post": "echo test_post noop"
   },
   "dependencies": {
