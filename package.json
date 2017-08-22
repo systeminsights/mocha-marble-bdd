@@ -1,6 +1,6 @@
 {
   "name": "mocha-marble-bdd",
-  "version": "1.2.31",
+  "version": "1.2.32",
   "description": "Mocha BDD UI extended for RxJs5 marble testing",
   "license": "MIT",
   "author": "Barry Kaplan <barry@systeminsights.com>",
