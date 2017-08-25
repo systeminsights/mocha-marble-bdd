@@ -6,6 +6,6 @@
 // The extensions are marked with MARBLE and BEGIN_MARBLE/END_MARBLE.
 //
 
-var MarbleInterface = require("./marble-bdd")
+var MarbleInterface = require("./src/marble-bdd")
 
 module.exports = MarbleInterface

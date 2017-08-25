@@ -1,4 +1,12 @@
-## IDEA
+node_modules/
+dist/
+*.DS_Store
+.nyc_output/
+coverage/
+dist/
+
+# All other idea project files are safe to commit
+.idea/workspace.xml
 .idea/tasks.xml
 .idea/mongoSettings.xml
 .idea/watcherTasks.xml
@@ -6,10 +14,4 @@
 .idea/markdown-navigator/
 .idea/markdown-exported-files.xml
 .idea/markdown-navigator.xml
-
-## Node
-node_modules/
-
-## Teamcity
-.ssh/
-.npmrc
+.idea/sonarlint
