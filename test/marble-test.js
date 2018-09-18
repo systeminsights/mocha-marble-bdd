@@ -1,6 +1,7 @@
 "use strict"
 
-const Rx = require("rxjs-compat")
+const {windowTime, map, mergeAll, toArray} = require("rxjs/operators")
+const {merge} = require("rxjs")
 
 describe("windowTime with Lolex", function() {
   it.marble("cold observable", function() {
@@ -16,8 +17,11 @@ describe("windowTime with Lolex", function() {
     //                                     ----|
     const expected     =      "----b---c---b-(b|)"
 
-    const testStream   = inputStream.windowTime(timespan, null, global.rxTestScheduler)
-      .map((v) => v.toArray()).mergeAll()
+    const testStream   = inputStream.pipe(
+        windowTime(timespan, null, global.rxTestScheduler),
+        map((v) => v.pipe(toArray())),
+        mergeAll()
+    )
 
     return expectObservable(testStream).toBe(expected, events)
   })
@@ -35,7 +39,10 @@ describe("windowTime with Lolex", function() {
     //                                        ----|
     const expected     =         "----b---c---b-(b|)"
 
-    const testStream   = inputStream.windowTime(timespan, null, global.rxTestScheduler).map((v) => v.toArray()).mergeAll()
+    const testStream   = inputStream.pipe(
+        windowTime(timespan, null, global.rxTestScheduler),
+        map((v) => v.pipe(toArray())),
+        mergeAll())
 
     return expectObservable(testStream).toBe(expected, events)
   })
@@ -55,7 +62,12 @@ describe("windowTime with Lolex", function() {
     //                                     ----|
     const expected     =      "----d---b---d---b(b|)"
 
-    const testStream   = inputStream.merge(inputStream2).windowTime(timespan, null, global.rxTestScheduler).map((v) => v.toArray()).mergeAll()
+    const testStream = merge(inputStream, inputStream2)
+        .pipe(
+            windowTime(timespan, null, global.rxTestScheduler),
+            map((v) => v.pipe(toArray())),
+            mergeAll()
+        )
 
     return expectObservable(testStream).toBe(expected, events)
   })

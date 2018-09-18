@@ -11,7 +11,7 @@ var Suite    = require('mocha/lib/suite');
 var Test     = require('mocha/lib/test');
 var escapeRe = require('escape-string-regexp');
 var chai     = require("chai")
-var Rx       = require("rxjs-compat")
+var {TestScheduler} = require("rxjs/testing");
 
 
 module.exports = Mocha.interfaces['marble-bdd'] = function(suite) {
@@ -148,7 +148,7 @@ module.exports = Mocha.interfaces['marble-bdd'] = function(suite) {
       }
       try {
         context.it(description, function () {
-          global.rxTestScheduler = new Rx.TestScheduler(assertDeepEqual)
+          global.rxTestScheduler = new TestScheduler(assertDeepEqual)
           cb(this)
           global.rxTestScheduler.flush()
         })
@@ -165,7 +165,7 @@ module.exports = Mocha.interfaces['marble-bdd'] = function(suite) {
       }
       try {
         context.it.only(description, function () {
-          global.rxTestScheduler = new Rx.TestScheduler(assertDeepEqual)
+          global.rxTestScheduler = new TestScheduler(assertDeepEqual)
           cb(this)
           global.rxTestScheduler.flush()
         })
