@@ -1,6 +1,6 @@
 "use strict"
 
-const Rx = require("rxjs")
+const Rx = require("rxjs-compat")
 
 describe("windowTime with Lolex", function() {
   it.marble("cold observable", function() {
