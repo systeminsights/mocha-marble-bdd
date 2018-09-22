@@ -1,6 +1,6 @@
 {
   "name": "mocha-marble-bdd",
-  "version": "1.2.80",
+  "version": "1.2.84",
   "description": "Mocha BDD UI extended for RxJs5 marble testing",
   "license": "MIT",
   "author": "Barry Kaplan <barry@systeminsights.com>",
@@ -32,18 +32,18 @@
   },
   "main": "dist/index.js",
   "dependencies": {
-    "babel-core": "6.26.0",
+    "babel-core": "6.26.3",
     "chai": "4.1.2",
     "escape-string-regexp": "1.0.5",
-    "mocha": "5.0.5",
-    "rxjs": "5.5.8"
+    "mocha": "5.2.0",
+    "rxjs": "6.3.2"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
-    "babel-plugin-istanbul": "4.1.5",
-    "babel-preset-env": "1.6.1",
-    "mocha-teamcity-reporter": "2.2.2",
-    "nyc": "11.6.0",
-    "semver": "5.5.0"
+    "babel-plugin-istanbul": "5.0.1",
+    "babel-preset-env": "1.7.0",
+    "mocha-teamcity-reporter": "2.5.0",
+    "nyc": "13.0.1",
+    "semver": "5.5.1"
   }
 }
