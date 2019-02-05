@@ -16,7 +16,7 @@
     "url": "git://github.com/systeminsights/mocha-marble-bdd.git"
   },
   "publishConfig": {
-    "registry": "https://repo.systeminsights.com/repository/si-npm"
+    "registry": "https://nexus.systeminsights.com/repository/si-npm"
   },
   "engines": {
     "node": ">=6.9.1"
@@ -33,17 +33,17 @@
   "main": "dist/index.js",
   "dependencies": {
     "babel-core": "6.26.3",
-    "chai": "4.1.2",
+    "chai": "4.2.0",
     "escape-string-regexp": "1.0.5",
     "mocha": "5.2.0",
-    "rxjs": "6.3.2"
+    "rxjs": "6.4.0"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
-    "babel-plugin-istanbul": "5.0.1",
+    "babel-plugin-istanbul": "5.1.0",
     "babel-preset-env": "1.7.0",
-    "mocha-teamcity-reporter": "2.5.0",
-    "nyc": "13.0.1",
-    "semver": "5.5.1"
+    "mocha-teamcity-reporter": "2.5.1",
+    "nyc": "13.2.0",
+    "semver": "5.6.0"
   }
 }
