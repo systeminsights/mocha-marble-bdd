@@ -25,8 +25,8 @@
     "test": "mocha --ui marble-bdd --require index.js --recursive ./test",
     "tc:version": "node version",
     "tc:test_pre": "echo test_pre noop",
-    "tc:test": "mocha --compilers js:babel-register --ui marble-bdd --reporter mocha-teamcity-reporter --require index.js --recursive ./test",
-    "tc:coverage": "NODE_ENV=test nyc --reporter=lcov --reporter=teamcity mocha --compilers js:babel-register --ui marble-bdd --require index.js --recursive ./test",
+    "tc:test": "mocha --require @babel/register --ui marble-bdd --reporter mocha-teamcity-reporter --require index.js --recursive ./test",
+    "tc:coverage": "NODE_ENV=test nyc --reporter=lcov --reporter=teamcity mocha --require @babel/register --ui marble-bdd --require index.js --recursive ./test",
     "tc:test_post": "echo test_post noop",
     "tc:build": "babel index.js -d dist; babel src -d dist/src"
   },
@@ -40,6 +40,7 @@
   },
   "devDependencies": {
     "@babel/cli": "7.4.3",
+    "@babel/register": "7.4.0",
     "babel-plugin-istanbul": "5.1.1",
     "@babel/preset-env": "7.4.3",
     "mocha-teamcity-reporter": "2.5.2",
