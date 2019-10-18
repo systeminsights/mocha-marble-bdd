@@ -24,6 +24,7 @@
   "scripts": {
     "test": "mocha --ui marble-bdd --require index.js --recursive ./test",
     "tc:version": "node version",
+    "tc:eslint": "tc-eslint",
     "tc:test_pre": "echo test_pre noop",
     "tc:test": "mocha --require @babel/register --ui marble-bdd --reporter mocha-teamcity-reporter --require index.js --recursive ./test",
     "tc:coverage": "NODE_ENV=test nyc --reporter=lcov --reporter=teamcity mocha --require @babel/register --ui marble-bdd --require index.js --recursive ./test",
