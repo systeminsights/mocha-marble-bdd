@@ -26,7 +26,7 @@
     "tc:version": "node version",
     "tc:eslint": "echo 'ESlint not enforced because code was copied from mocha project'",
     "tc:test": "mocha --require @babel/register --ui marble-bdd --reporter mocha-teamcity-reporter --require index.js --recursive ./test",
-    "tc:coverage": "NODE_ENV=test nyc --reporter=lcov --reporter=teamcity mocha --require @babel/register --ui marble-bdd --require index.js --recursive ./test",
+    "tc:coverage": "NODE_ENV=test ELASTIC_APM_ACTIVE=false nyc --reporter=lcov --reporter=teamcity mocha --require @babel/register --ui marble-bdd --require index.js --recursive ./test",
     "tc:build": "babel index.js -d dist; babel src -d dist/src"
   },
   "main": "dist/index.js",
