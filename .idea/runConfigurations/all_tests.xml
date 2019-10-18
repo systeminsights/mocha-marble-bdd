@@ -1,12 +1,12 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="All specs" type="mocha-javascript-test-runner">
-    <node-interpreter>$USER_HOME$/.nvm/versions/node/v10.14.0/bin/node</node-interpreter>
+  <configuration default="false" name="all tests" type="mocha-javascript-test-runner">
+    <node-interpreter>$USER_HOME$/.nvm/current/bin/node</node-interpreter>
     <node-options />
     <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
     <working-directory>$PROJECT_DIR$</working-directory>
     <pass-parent-env>true</pass-parent-env>
     <ui>marble-bdd</ui>
-    <extra-mocha-options>--require babel-register --require index.js</extra-mocha-options>
+    <extra-mocha-options>--require @babel/register --require index.js</extra-mocha-options>
     <test-kind>DIRECTORY</test-kind>
     <test-directory>$PROJECT_DIR$/test</test-directory>
     <recursive>true</recursive>
