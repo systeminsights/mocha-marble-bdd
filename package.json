@@ -26,7 +26,7 @@
     "tc:version": "node version",
     "tc:eslint": "echo 'ESlint not enforced because code was copied from mocha project'",
     "tc:test": "mocha --require @babel/register --ui marble-bdd --reporter mocha-teamcity-reporter --require index.js --recursive ./test",
-    "tc:coverage": "NODE_ENV=nyc ELASTIC_APM_ACTIVE=false nyc --nycrc-path=node_modules/babel-preset-vi-node/.nycrc mocha --ui marble-bdd --require @babel/register --require index.js --recursive ./test",
+    "tc:coverage": "NODE_ENV=nyc ELASTIC_APM_ACTIVE=false nyc --nycrc-path=node_modules/babel-preset-vi-node/.nycrc mocha --ui marble-bdd --reporter mocha-teamcity-reporter --require @babel/register --require index.js --recursive ./test",
     "tc:coverage:4": "tc-coverage-mocha",
     "tc:build": "babel index.js -d dist; babel src -d dist/src"
   },
@@ -43,6 +43,7 @@
     "babel-preset-vi-node": "1.0.90",
     "eslint-config-vi-node": "1.2.95",
     "mocha-marble-bdd": "1.2.96",
+    "mocha-teamcity-reporter": "3.0.0",
     "nyc": "14.1.1",
     "semver": "6.3.0"
   }
