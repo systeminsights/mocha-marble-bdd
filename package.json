@@ -40,9 +40,9 @@
   },
   "devDependencies": {
     "@babel/cli": "7.6.4",
+    "@babel/preset-env": "7.6.3",
     "@babel/register": "7.6.2",
     "babel-plugin-istanbul": "5.2.0",
-    "@babel/preset-env": "7.6.3",
     "mocha-teamcity-reporter": "3.0.0",
     "nyc": "14.1.1",
     "semver": "6.3.0"
