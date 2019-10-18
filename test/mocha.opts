@@ -1,0 +1,4 @@
+--require @babel/register
+--ui marble-bdd
+--timeout 5000
+--require test/setup.js
