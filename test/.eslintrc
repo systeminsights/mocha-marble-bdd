@@ -1,3 +1,10 @@
 {
-  "extends": "vi-node/test"
+  "extends": "vi-node/test",
+  "globals": {
+    "cold": true,
+    "time": true,
+    "hot": true,
+    "expectObservable": true,
+    "rxTestScheduler": true
+  }
 }
