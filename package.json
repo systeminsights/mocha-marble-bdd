@@ -40,8 +40,8 @@
   },
   "devDependencies": {
     "@babel/node": "7.7.0",
-    "babel-preset-vi-node": "1.0.106",
-    "eslint-config-vi-node": "1.2.148",
+    "babel-preset-vi-node": "1.0.108",
+    "eslint-config-vi-node": "1.2.149",
     "mocha-marble-bdd": "1.2.110",
     "mocha-teamcity-reporter": "3.0.0",
     "nyc": "14.1.1",
