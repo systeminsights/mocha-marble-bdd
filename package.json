@@ -22,15 +22,14 @@
     "node": ">=6.9.1"
   },
   "scripts": {
-    "test": "mocha --reporter dot --ui marble-bdd --require index.js --recursive ./test",
+    "test": "mocha --reporter dot --ui marble-bdd --require @babel/register --require ./src/index.js --recursive ./test",
     "tc:version": "node version",
     "tc:eslint": "echo 'ESlint not enforced because code was copied from mocha project'",
-    "tc:test": "mocha --require @babel/register --ui marble-bdd --reporter mocha-teamcity-reporter --require index.js --recursive ./test",
-    "tc:coverage": "NODE_ENV=nyc ELASTIC_APM_ACTIVE=false nyc --nycrc-path=node_modules/babel-preset-vi-node/.nycrc mocha --ui marble-bdd --reporter mocha-teamcity-reporter --require @babel/register --require index.js --recursive ./test",
-    "tc:coverage:4": "tc-coverage-mocha",
-    "tc:build": "babel index.js -d dist; babel src -d dist/src"
+    "tc:coverage": "tc-coverage-mocha",
+    "tc:build": "tc-build"
   },
   "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
   "dependencies": {
     "@babel/core": "7.7.2",
     "chai": "4.2.0",
