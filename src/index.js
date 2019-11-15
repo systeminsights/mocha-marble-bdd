@@ -6,4 +6,4 @@
 // The extensions are marked with MARBLE and BEGIN_MARBLE/END_MARBLE.
 //
 
-export {default as MarbleInterface} from "./marble-bdd"
+export * from "./marble-bdd"
