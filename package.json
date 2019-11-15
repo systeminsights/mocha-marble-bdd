@@ -42,6 +42,7 @@
     "babel-preset-vi-node": "1.0.113",
     "eslint-config-vi-node": "1.2.161",
     "mocha-teamcity-reporter": "3.0.0",
+    "mocha-marble-bdd": "1.3.28",
     "nyc": "14.1.1",
     "semver": "6.3.0"
   }

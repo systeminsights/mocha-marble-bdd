@@ -1,3 +1,3 @@
 --require @babel/register
---ui ./dist/marble-bdd.js
+--ui mocha-marble-bdd
 --timeout 5000
