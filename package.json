@@ -23,7 +23,6 @@
   },
   "scripts": {
     "test": "mocha --reporter dot --ui marble-bdd --require @babel/register --require ./src/index.js --recursive ./test",
-    "tc:version": "node version",
     "tc:eslint": "echo 'ESlint not enforced because code was copied from mocha project'",
     "tc:coverage": "tc-coverage-mocha",
     "tc:build": "tc-build"
