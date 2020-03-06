@@ -32,11 +32,11 @@
   "dependencies": {
     "chai": "4.2.0",
     "escape-string-regexp": "2.0.0",
-    "mocha": "7.0.1",
+    "mocha": "7.1.0",
     "rxjs": "6.5.4"
   },
   "devDependencies": {
-    "babel-preset-vi-node": "1.0.118",
-    "eslint-config-vi-node": "1.2.197"
+    "babel-preset-vi-node": "1.0.122",
+    "eslint-config-vi-node": "1.2.199"
   }
 }
