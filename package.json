@@ -18,6 +18,10 @@
   "publishConfig": {
     "registry": "https://nexus.systeminsights.com/repository/si-npm"
   },
+  "files": [
+    "dist/",
+    "src/"
+  ],
   "engines": {
     "node": ">=6.9.1"
   },
