@@ -40,7 +40,7 @@
     "rxjs": "6.5.4"
   },
   "devDependencies": {
-    "babel-preset-vi-node": "1.0.122",
-    "eslint-config-vi-node": "1.2.199"
+    "babel-preset-vi-node": "1.0.135",
+    "eslint-config-vi-node": "1.2.201"
   }
 }
