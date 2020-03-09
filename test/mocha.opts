@@ -1,3 +1,0 @@
---require @babel/register
---ui ./src/index.js
---timeout 5000
