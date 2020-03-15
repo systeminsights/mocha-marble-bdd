@@ -26,8 +26,7 @@
     "node": ">=6.9.1"
   },
   "scripts": {
-    "test": "mocha --reporter dot --ui marble-bdd --require @babel/register --require ./src/index.js --recursive ./test",
-    "tc:eslint": "echo 'ESlint not enforced because code was copied from mocha project'",
+    "test": "test-mocha",
     "tc:coverage": "tc-coverage-mocha",
     "tc:build": "tc-build"
   },
@@ -40,8 +39,8 @@
     "rxjs": "6.5.4"
   },
   "devDependencies": {
-    "babel-preset-vi-node": "1.0.137",
-    "eslint-config-vi-node": "1.2.202"
+    "babel-preset-vi-node": "1.0.141",
+    "eslint-config-vi-node": "1.2.204"
   },
   "mocha": {
     "require": [
