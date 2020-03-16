@@ -18,6 +18,12 @@
   "publishConfig": {
     "registry": "https://nexus.systeminsights.com/repository/si-npm"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitmsg-jira",
+      "pre-commit": "tc-eslint"
+    }
+  },
   "files": [
     "dist/",
     "src/"
