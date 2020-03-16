@@ -44,7 +44,7 @@
     "rxjs": "6.5.4"
   },
   "devDependencies": {
-    "babel-preset-vi-node": "1.0.141",
+    "babel-preset-vi-node": "1.0.142",
     "eslint-config-vi-node": "1.2.204"
   },
   "mocha": {
