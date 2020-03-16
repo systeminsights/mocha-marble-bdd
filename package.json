@@ -20,8 +20,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitmsg-jira",
-      "pre-commit": "tc-eslint"
+      "commit-msg": "commitmsg-jira"
     }
   },
   "files": [
