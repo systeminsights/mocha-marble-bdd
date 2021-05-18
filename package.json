@@ -41,11 +41,11 @@
     "chai": "4.3.4",
     "escape-string-regexp": "5.0.0",
     "mocha": "8.4.0",
-    "rxjs": "7.0.0"
+    "rxjs": "7.0.1"
   },
   "devDependencies": {
-    "babel-preset-vi-node": "1.0.164",
-    "eslint-config-vi-node": "1.2.245"
+    "babel-preset-vi-node": "1.0.168",
+    "eslint-config-vi-node": "1.2.247"
   },
   "mocha": {
     "require": [
