@@ -1,5 +1,5 @@
 {
   "reject": [
-    "escape-string-regexp",
+    "escape-string-regexp"
   ]
 }
