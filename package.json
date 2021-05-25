@@ -41,7 +41,7 @@
     "chai": "4.3.4",
     "escape-string-regexp": "4.0.0",
     "mocha": "8.4.0",
-    "rxjs": "7.0.1"
+    "rxjs": "7.1.0"
   },
   "devDependencies": {
     "babel-preset-vi-node": "1.0.168",
